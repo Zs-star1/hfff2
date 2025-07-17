@@ -198,16 +198,35 @@
   <div id="footer"></div>
 
   <!-- تحميل ملفات header و footer -->
-  <script>
-    fetch("header.html")
-      .then(res => res.text())
-      .then(data => document.getElementById("header").innerHTML = data)
-      .catch(err => console.error("فشل في تحميل header.html", err));
+<script>
+  // تحميل شريط الهيدر
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      const headerContainer = document.getElementById("header");
+      headerContainer.innerHTML = data;
 
-    fetch("footer.html")
-      .then(res => res.text())
-      .then(data => document.getElementById("footer").innerHTML = data)
-      .catch(err => console.error("فشل في تحميل footer.html", err));
-  </script>
+      // تنفيذ أي سكربت داخل الهيدر يدويًا
+      const scripts = headerContainer.querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        if (oldScript.src) {
+          newScript.src = oldScript.src;
+        } else {
+          newScript.textContent = oldScript.textContent;
+        }
+        document.body.appendChild(newScript);
+      });
+    })
+    .catch(err => console.error("فشل في تحميل header.html", err));
+
+  // تحميل شريط الفوتر
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    })
+    .catch(err => console.error("فشل في تحميل footer.html", err));
+</script>
 </body>
 </html>

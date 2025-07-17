@@ -12,7 +12,7 @@
     </nav>
   </div>
 
-  <!-- زر العودة لصفحة بيانات الاتصال فقط -->
+  <!-- زر العودة الخاص بصفحة الاتصال -->
   <div class="return-container" id="return-button" style="display: none;">
     <a class="return-button" href="contact.html">⬅ العودة إلى بيانات الاتصال</a>
   </div>
@@ -89,7 +89,6 @@
       background-color: #ec407a;
     }
 
-    /* تصميم الجوال */
     @media (max-width: 768px) {
       nav {
         display: none;
@@ -115,40 +114,22 @@
     }
   </style>
 
+  <!-- ملاحظة مهمة: استخدم IIFE لضمان عمل السكربت بعد التحميل -->
   <script>
-    // تشغيل القائمة المنسدلة في الجوال
-    document.addEventListener("DOMContentLoaded", function () {
+    (function () {
       const burgerBtn = document.getElementById("burger-btn");
       const navMenu = document.getElementById("nav-menu");
+      const returnBtn = document.getElementById("return-button");
 
-      burgerBtn.addEventListener("click", function () {
-        navMenu.classList.toggle("show");
-      });
-
-      // عرض زر العودة فقط في contact.html
-      if (window.location.pathname.includes("contact.html")) {
-        document.getElementById("return-button").style.display = "block";
+      if (burgerBtn && navMenu) {
+        burgerBtn.addEventListener("click", () => {
+          navMenu.classList.toggle("show");
+        });
       }
-    });
+
+      if (window.location.pathname.includes("contact.html") && returnBtn) {
+        returnBtn.style.display = "block";
+      }
+    })();
   </script>
 </header>
-<div id="header"></div>
-<script>
-  fetch("header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header").innerHTML = data;
-
-      // هذا الكود مهم لتنفيذ السكربت داخل الهيدر
-      const scripts = document.getElementById("header").getElementsByTagName("script");
-      for (let i = 0; i < scripts.length; i++) {
-        const script = document.createElement("script");
-        if (scripts[i].src) {
-          script.src = scripts[i].src;
-        } else {
-          script.text = scripts[i].innerHTML;
-        }
-        document.body.appendChild(script);
-      }
-    });
-</script>
