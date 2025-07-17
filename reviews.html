@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>انطباعات العملاء | أناقة ورد</title>
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      background-color: #fff8f9;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+    }
+
+    #header {
+      width: 100%;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #c2185b;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .review {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: right;
+    }
+
+    .review h4 {
+      margin: 0 0 10px;
+      color: #880e4f;
+    }
+
+    .review p {
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .stars {
+      color: gold;
+      margin-bottom: 10px;
+    }
+
+    .return-button {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 30px;
+      background-color: #f06292;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    .return-button:hover {
+      background-color: #ec407a;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- استدعاء الشريط العلوي -->
+  <div id="header"></div>
+
+  <div class="container">
+    <h2>ماذا قال عملاؤنا عن أناقة ورد؟</h2>
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <h4>سارة محمد</h4>
+      <p>خدمة ممتازة، والتوصيل كان سريع جدًا. الباقة كانت رائعة وشكلها أفخم من الصور!</p>
+    </div>
+
+    <div class="review">
+      <div class="stars">★★★★☆</div>
+      <h4>نواف العتيبي</h4>
+      <p>الورد كان منعش وجميل، فقط أتمنى لو كانت الأسعار أقل قليلًا.</p>
+    </div>
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <h4>ريم العبدالله</h4>
+      <p>أجمل محل ورد تعاملت معه. تعامل راقٍ وتصميم مذهل. شكراً لكم!</p>
+    </div>
+
+    <!-- زر العودة -->
+    <a href="index.html" class="return-button">⬅ العودة إلى الصفحة الرئيسية</a>
+  </div>
+
+  <!-- تحميل الهيدر من ملف خارجي -->
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => document.getElementById("header").innerHTML = data)
+      .catch(error => console.error("خطأ في تحميل الهيدر:", error));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أناقة ورد</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fce4ec;
+      color: #333;
+      direction: rtl;
+      position: relative;
+    }
+
+    #header, #footer {
+      width: 100%;
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .video-background video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(60%);
+    }
+
+    .hero-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 20px 100px;
+      text-align: center;
+      color: white;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-section h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .hero-section p {
+      font-size: 20px;
+      max-width: 600px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 60px 20px;
+      background-color: #fff;
+    }
+
+    .service {
+      background-color: #fff0f5;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-8px);
+    }
+
+    .service h3 {
+      color: #c2185b;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .service p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .image-gallery {
+      padding: 40px 20px;
+      background-color: #fce4ec;
+      text-align: center;
+    }
+
+    .image-gallery h2 {
+      color: #ad1457;
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .gallery-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .gallery-item {
+      max-width: 260px;
+      width: 90%;
+      text-align: center;
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item p {
+      margin-top: 10px;
+      color: #6a1b9a;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الفيديو كخلفية -->
+  <div class="video-background">
+    <video autoplay muted loop playsinline>
+      <source src="imge/787.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <!-- شريط علوي -->
+  <div id="header"></div>
+
+  <!-- مقدمة -->
+  <section class="hero-section">
+    <h1>أهلاً بكم في أناقة ورد</h1>
+    <p>تجربة فريدة في عالم الورود والهدايا.. حيث نصنع الجمال بلمسة من الطبيعة.</p>
+  </section>
+
+  <!-- عرض الصور -->
+  <section class="image-gallery">
+    <h2>تشكيلاتنا الأنيقة</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="imge/ordd.jpg" alt="تشكيلة ورد">
+        <p>شاهد الصورة لعرضها بملء الشاشة</p>
+      </div>
+      <div class="gallery-item">
+        <img src="imge/ord1.jpeg" alt="ورد 1">
+        <p>شاهد الصورة لعرضها بملء الشاشة</p>
+      </div>
+      <div class="gallery-item">
+        <img src="imge/ord3.jpeg" alt="ورد 2">
+        <p>شاهد الصورة لعرضها بملء الشاشة</p>
+      </div>
+      <div class="gallery-item">
+        <img src="imge/ord22.jpeg" alt="ورد 3">
+        <p>شاهد الصورة لعرضها بملء الشاشة</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- الخدمات -->
+  <section class="services">
+    <div class="service">
+      <h3>توصيل سريع</h3>
+      <p>نوصّل الورود والهدايا خلال ساعات، بجودة عالية وبأمان تام داخل تغليف أنيق.</p>
+    </div>
+    <div class="service">
+      <h3>تفصيل حسب الطلب</h3>
+      <p>نصمم تشكيلات ورد وباقات مخصصة للمناسبات الخاصة مثل الأعراس والمواليد وغيرها.</p>
+    </div>
+    <div class="service">
+      <h3>عروض شهرية</h3>
+      <p>استمتع بعروض حصرية كل شهر، خصومات مميزة على باقات الورود والهدايا الفاخرة.</p>
+    </div>
+  </section>
+
+  <!-- شريط سفلي -->
+  <div id="footer"></div>
+
+  <!-- تحميل ملفات header و footer -->
+  <script>
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("header").innerHTML = data)
+      .catch(err => console.error("فشل في تحميل header.html", err));
+
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data)
+      .catch(err => console.error("فشل في تحميل footer.html", err));
+  </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>خدماتنا - محل ورد</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff0f5;
+      color: #333;
+      direction: rtl;
+    }
+
+    #header, #footer {
+      width: 100%;
+    }
+
+    .services-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .services-section h2 {
+      text-align: center;
+      color: #c2185b;
+      margin-bottom: 30px;
+    }
+
+    .service-box {
+      background-color: #ffe3ec;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .service-box h3 {
+      color: #880e4f;
+      margin-bottom: 10px;
+    }
+
+    .service-box p {
+      font-size: 17px;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- تحميل الشريط العلوي -->
+  <div id="header"></div>
+
+  <!-- قسم الخدمات -->
+  <section class="services-section">
+    <h2>خدماتنا</h2>
+
+    <div class="service-box">
+      <h3>توصيل الورود الفوري</h3>
+      <p>نقدم خدمة توصيل سريعة للورود داخل المدينة وفي الأحياء المجاورة خلال أقل من ساعتين.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>تشكيلات مخصصة حسب الطلب</h3>
+      <p>صمّم باقتك الخاصة حسب المناسبة، سواء كانت أفراح، مواليد، اعتذارات أو تهاني.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>تنسيق الهدايا مع الورود</h3>
+      <p>نوفّر صناديق هدايا فاخرة تحتوي على الورود والعطور والشوكولاتة وفق رغبتك.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>اشتراكات شهرية</h3>
+      <p>اشترك بخدمة الورود الدورية واحصل على باقة أسبوعية لمنزلك أو مكتبك.</p>
+    </div>
+  </section>
+
+  <!-- تحميل الشريط السفلي -->
+  <div id="footer"></div>
+
+  <!-- استدعاء ملفات header.html و footer.html -->
+  <script>
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("header").innerHTML = data)
+      .catch(err => console.error("فشل تحميل الهيدر", err));
+
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data)
+      .catch(err => console.error("فشل تحميل الفوتر", err));
+  </script>
+</body>
+</html>

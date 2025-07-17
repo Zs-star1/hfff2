@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>طلب خدمة | أناقة ورد</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff0f5;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #c2185b;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    form button {
+      background-color: #c2185b;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    form button:hover {
+      background-color: #ad1457;
+    }
+
+    /* تنسيق زر العودة */
+    .return-button {
+      display: block;
+      width: fit-content;
+      margin: 40px auto 0;
+      padding: 12px 30px;
+      background-color: #c2185b;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    .return-button:hover {
+      background-color: #ad1457;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- استدعاء الشريط العلوي -->
+  <div id="header"></div>
+
+  <div class="container">
+    <h2>نموذج طلب خدمة</h2>
+    <form>
+      <input type="text" placeholder="الاسم الكامل" required />
+      <input type="tel" placeholder="رقم الجوال" required />
+      <textarea rows="4" placeholder="تفاصيل الطلب" required></textarea>
+      <button type="submit">إرسال الطلب</button>
+    </form>
+  </div>
+
+  <!-- زر العودة إلى الرئيسية -->
+  <div class="container">
+    <a href="index.html" class="return-button">⬅ العودة إلى الصفحة الرئيسية</a>
+  </div>
+
+  <!-- استدعاء الشريط السفلي -->
+  <div id="footer"></div>
+
+  <script>
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("header").innerHTML = data);
+
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+  </script>
+
+</body>
+</html>

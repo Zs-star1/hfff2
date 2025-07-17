@@ -1,0 +1,154 @@
+<header>
+  <div class="navbar">
+    <h1 class="logo">أناقة ورد</h1>
+    <button class="burger" id="burger-btn">☰</button>
+    <nav id="nav-menu">
+      <a href="index.html">الرئيسية</a>
+      <a href="services.html">خدماتنا</a>
+      <a href="order.html">طلب الخدمة</a>
+      <a href="contact.html">بيانات الاتصال</a>
+      <a href="about.html">من نحن</a>
+      <a href="reviews.html"><span class="icon">⭐</span>انطباعات العملاء</a>
+    </nav>
+  </div>
+
+  <!-- زر العودة لصفحة بيانات الاتصال فقط -->
+  <div class="return-container" id="return-button" style="display: none;">
+    <a class="return-button" href="contact.html">⬅ العودة إلى بيانات الاتصال</a>
+  </div>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    header {
+      background: linear-gradient(90deg, #c471ed, #f64f59);
+      color: white;
+      padding: 15px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .logo {
+      font-size: 28px;
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 10px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      border-bottom: 2px solid #fff;
+    }
+
+    .burger {
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      display: none;
+    }
+
+    .return-container {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .return-button {
+      background-color: #f06292;
+      color: white;
+      padding: 8px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+
+    .return-button:hover {
+      background-color: #ec407a;
+    }
+
+    /* تصميم الجوال */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #d05ce3;
+        margin-top: 10px;
+        border-radius: 8px;
+      }
+
+      nav a {
+        padding: 12px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .burger {
+        display: block;
+      }
+
+      nav.show {
+        display: flex;
+      }
+    }
+  </style>
+
+  <script>
+    // تشغيل القائمة المنسدلة في الجوال
+    document.addEventListener("DOMContentLoaded", function () {
+      const burgerBtn = document.getElementById("burger-btn");
+      const navMenu = document.getElementById("nav-menu");
+
+      burgerBtn.addEventListener("click", function () {
+        navMenu.classList.toggle("show");
+      });
+
+      // عرض زر العودة فقط في contact.html
+      if (window.location.pathname.includes("contact.html")) {
+        document.getElementById("return-button").style.display = "block";
+      }
+    });
+  </script>
+</header>
+<div id="header"></div>
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+
+      // هذا الكود مهم لتنفيذ السكربت داخل الهيدر
+      const scripts = document.getElementById("header").getElementsByTagName("script");
+      for (let i = 0; i < scripts.length; i++) {
+        const script = document.createElement("script");
+        if (scripts[i].src) {
+          script.src = scripts[i].src;
+        } else {
+          script.text = scripts[i].innerHTML;
+        }
+        document.body.appendChild(script);
+      }
+    });
+</script>
